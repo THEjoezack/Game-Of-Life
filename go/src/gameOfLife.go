@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"lib"
 	"math/rand"
@@ -10,17 +11,23 @@ import (
 )
 
 func main() {
-	rows, cols, sleepMs, iterations, round := 50, 20, 250, 25, 1
-	g := createRandomGrid(cols, rows)
+	var cols = flag.Int("columns", 50, "How many columns")
+	var rows = flag.Int("rows", 20, "How many rows")
+	var sleepMs = flag.Int("sleepMs", 250, "How many milliseconds to sleep between frames")
+	var iterations = flag.Int("iterations", 50, "How many iterations to run, 0 for infinite")
+	flag.Parse()
 
-	for iterations == 0 || round <= iterations {
-		drawGame(g, round)
+	g := createRandomGrid(*cols, *rows)
+	round := 1
+
+	for *iterations == 0 || round <= *iterations {
+		renderGame(g, round)
 		g, round = lib.GetNextGrid(&g), round+1
-		time.Sleep(time.Duration(sleepMs) * time.Millisecond)
+		time.Sleep(time.Duration(*sleepMs) * time.Millisecond)
 	}
 }
 
-func drawGame(g lib.Grid, round int) {
+func renderGame(g lib.Grid, round int) {
 	clearScreen()
 	fmt.Printf("Round: %d\n", round)
 	renderGrid(&g)
@@ -48,7 +55,7 @@ func clearScreen() {
 }
 
 func createRandomGrid(rows, cols int) lib.Grid {
-	g := lib.NewGrid(rows, cols)
+	g := lib.NewGrid(cols, rows)
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	for x, cells := range g.Cells {
