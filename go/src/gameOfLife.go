@@ -10,26 +10,21 @@ import (
 )
 
 func main() {
-	rows := 10
-	cols := 10
-	sleepMs := 500
-	iterations := 10
-
+	rows, cols, sleepMs, iterations, round := 50, 20, 250, 25, 1
 	g := createRandomGrid(cols, rows)
-	round := 1
 
 	for iterations == 0 || round <= iterations {
-		clearScreen()
-
-		fmt.Printf("Round: %d\n", round)
-		renderGrid(&g)
-		fmt.Println()
-
-		g = lib.GetNextGrid(&g)
-		round += 1
-
+		drawGame(g, round)
+		g, round = lib.GetNextGrid(&g), round+1
 		time.Sleep(time.Duration(sleepMs) * time.Millisecond)
 	}
+}
+
+func drawGame(g lib.Grid, round int) {
+	clearScreen()
+	fmt.Printf("Round: %d\n", round)
+	renderGrid(&g)
+	fmt.Println()
 }
 
 func renderGrid(g *lib.Grid) {
@@ -45,6 +40,7 @@ func renderGrid(g *lib.Grid) {
 	}
 }
 
+// TODO Doesn't work on windows
 func clearScreen() {
 	c := exec.Command("clear")
 	c.Stdout = os.Stdout
@@ -54,10 +50,13 @@ func clearScreen() {
 func createRandomGrid(rows, cols int) lib.Grid {
 	g := lib.NewGrid(rows, cols)
 	rand.Seed(time.Now().UTC().UnixNano())
-	for y, cells := range g.Cells {
-		for x, _ := range cells {
+
+	for x, cells := range g.Cells {
+		for y, _ := range cells {
 			if rand.Int()%2 == 0 {
-				g.Set(x, y, 1)
+				if err := g.Set(x, y, 1); err != nil {
+					panic(err)
+				}
 			}
 		}
 	}
