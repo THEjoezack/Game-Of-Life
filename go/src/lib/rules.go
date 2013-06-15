@@ -4,7 +4,9 @@ func GetNextGrid(g *Grid) Grid {
 	next := NewGrid(len(g.Cells), len(g.Cells[0]))
 	for x, cells := range g.Cells {
 		for y, _ := range cells {
-			next.Set(x, y, getNextStatus(g, x, y))
+			if err := next.Set(x, y, getNextStatus(g, x, y)); err != nil {
+				panic(err)
+			}
 		}
 	}
 	return next
