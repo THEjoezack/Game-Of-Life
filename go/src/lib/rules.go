@@ -4,7 +4,9 @@ func GetNextGrid(g *Grid) Grid {
 	next := NewGrid(len(g.Cells), len(g.Cells[0]))
 	for x, cells := range g.Cells {
 		for y, _ := range cells {
-			if err := next.Set(x, y, getNextStatus(g, x, y)); err != nil {
+			status := g.Get(x, y)
+			count := g.liveCount(x, y)
+			if err := next.Set(x, y, getNextStatus(status, count)); err != nil {
 				panic(err)
 			}
 		}
@@ -12,9 +14,7 @@ func GetNextGrid(g *Grid) Grid {
 	return next
 }
 
-func getNextStatus(g *Grid, x, y int) byte {
-	status := g.Get(x, y)
-	count := g.liveCount(x, y)
+func getNextStatus(status, count byte) byte {
 	if status == 0 && count == 3 {
 		return 1
 	}
