@@ -23,30 +23,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife.go",
-			"settings":
-			{
-				"buffer_size": 829,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/grid.go",
-			"settings":
-			{
-				"buffer_size": 696,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/rules.go",
-			"settings":
-			{
-				"buffer_size": 436,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/Go Build/Go.sublime-build",
 	"command_palette":
@@ -92,12 +68,20 @@
 	},
 	"file_history":
 	[
+		"/E/projects/Game-Of-Life/go/src/lib/rules.go",
+		"/E/projects/Game-Of-Life/go/src/lib/rules_test.go",
+		"/E/projects/Game-Of-Life/go/src/lib/grid.go",
+		"/E/projects/Game-Of-Life/go/src/gameOfLife.go",
+		"/E/projects/Game-Of-Life/go/src/lib/grid_test.go",
+		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife.go",
 		"/C/Users/joe/Dropbox/projects/GameOfLife/go/gameOfLife.sublime-project",
+		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/grid_test.go",
+		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/grid.go",
+		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/rules.go",
 		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife/rules.go",
 		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife/grid.go",
 		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife/gameOfLife.go",
 		"/C/Users/joe/Dropbox/projects/GameOfLife/go/go.sublime-build",
-		"/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife.go",
 		"/C/Users/joe/Dropbox/gameOfLife.go",
 		"/E/projects/Project-Euler/go/src/euler/lib/primeGenerator.go",
 		"/E/projects/Project-Euler/go/src/euler/lib/palindrome.go",
@@ -183,6 +167,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Cols",
+			"Col",
 			"cell",
 			"cells",
 			"package",
@@ -231,91 +217,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/gameOfLife.go",
-					"settings":
-					{
-						"buffer_size": 829,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								562,
-								562
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GoSublime/GoSublime.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 576.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/grid.go",
-					"settings":
-					{
-						"buffer_size": 696,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								201
-							]
-						],
-						"settings":
-						{
-							"spell_check": true,
-							"syntax": "Packages/GoSublime/GoSublime.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/joe/Dropbox/projects/GameOfLife/go/src/lib/rules.go",
-					"settings":
-					{
-						"buffer_size": 436,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GoSublime/GoSublime.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -372,7 +275,7 @@
 	},
 	"output.exec":
 	{
-		"height": 249.0
+		"height": 252.0
 	},
 	"replace":
 	{

@@ -1,11 +1,14 @@
 {
-    "folders": [
-        {
-            "path": "/C/Users/joe/Dropbox/projects/GameOfLife/go"
-        }
-    ], 
-    "settings": {
-        "go_project": true, 
-        "name": "gameOfLife"
-    }
+	"folders":
+	[
+		{
+			"path": "/E/projects/Game-Of-Life"
+		}
+	],
+	"settings":
+	{
+		"go_project": true,
+		"main": "src/gameOfLife.go",
+		"name": "gameOfLife"
+	}
 }
